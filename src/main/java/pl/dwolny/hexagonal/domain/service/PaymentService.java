@@ -30,7 +30,6 @@ public class PaymentService {  //Can Implement some interface if we plan to have
 	public void deletePayment(UUID id) {
 
 		paymentRepository.deleteById(id);
-
 	}
 
 	public CreatePaymentResponse createPayment(CreatePaymentRequest createPaymentRequest) {
@@ -39,7 +38,6 @@ public class PaymentService {  //Can Implement some interface if we plan to have
 		paymentRepository.save(payment);
 
 		return new CreatePaymentResponse(payment.getId());
-
 	}
 
 	public Payment updatePayment(UpdatePaymentRequest updatePaymentRequest) {
@@ -55,7 +53,6 @@ public class PaymentService {  //Can Implement some interface if we plan to have
 		paymentRepository.save(payment);
 
 		return payment;
-
 	}
 
 	public List<Payment> getAllPayments() {

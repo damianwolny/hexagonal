@@ -30,47 +30,58 @@ public class InMemoryRepository<T, ID extends Serializable> {
 	}
 
 	public List<T> findAll() {
+
 		return new ArrayList<>(database.values());
 	}
 
 	public Optional<T> findById(ID id) {
+
 		return Optional.ofNullable(database.get(id));
 	}
 
 	public <S extends T> Iterable<S> saveAll(Iterable<S> entities) {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	public boolean existsById(ID id) {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	public Iterable<T> findAllById(Iterable<ID> ids) {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	public long count() {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	public void deleteById(ID id) {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	public void delete(T entity) {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	public void deleteAll(Iterable<? extends T> entities) {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	public void deleteAll() {
+
 		throw new RuntimeException("Not Implemented");
 	}
 
 	@SneakyThrows
 	private static Object getId(Object t) {
+
 		return MethodUtils.invokeMethod(t, "getId");
 	}
 }

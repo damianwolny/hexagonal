@@ -22,13 +22,11 @@ public class PaymentFacade {
 	public Payment getPayment(final UUID id) {
 
 		return paymentService.getPayment(id);
-
 	}
 
 	public void deletePayment(UUID id) {
 
 		paymentService.deletePayment(id);
-
 	}
 
 	public CreatePaymentResponse createPayment(CreatePaymentRequest createPaymentRequest) {

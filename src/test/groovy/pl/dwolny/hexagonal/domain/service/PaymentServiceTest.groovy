@@ -9,27 +9,27 @@ import spock.lang.Subject
 
 class PaymentServiceTest extends Specification {
 
-    PaymentRepository paymentRepository = new PaymentTestRepository()
+	PaymentRepository paymentRepository = new PaymentTestRepository()
 
-    @Subject
-    PaymentService paymentService = new PaymentService(paymentRepository)
+	@Subject
+	PaymentService paymentService = new PaymentService(paymentRepository)
 
-    def "should create payment"() {
+	def "should create payment"() {
 
-        given:
-        CreatePaymentRequest request = ModelTestUtil.createPaymentSampleRequest
+		given:
+			CreatePaymentRequest request = ModelTestUtil.createPaymentSampleRequest
 
-        when:
-        CreatePaymentResponse response = paymentService.createPayment(request)
+		when:
+			CreatePaymentResponse response = paymentService.createPayment(request)
 
-        then:
-		paymentRepository.findById(response.getId()).isPresent()
-		def createdPayment = paymentRepository.findById(response.getId()).get()
+		then:
+			paymentRepository.findById(response.getId()).isPresent()
+			def createdPayment = paymentRepository.findById(response.getId()).get()
 
-		createdPayment.id != null
-		createdPayment.paymentDetails.accountNumber == request.paymentDetails.accountNumber
-		createdPayment.paymentDetails.currency == request.paymentDetails.currency
-		createdPayment.paymentDetails.userId == request.paymentDetails.userId
+			createdPayment.id != null
+			createdPayment.paymentDetails.accountNumber == request.paymentDetails.accountNumber
+			createdPayment.paymentDetails.currency == request.paymentDetails.currency
+			createdPayment.paymentDetails.userId == request.paymentDetails.userId
 
-    }
+	}
 }
