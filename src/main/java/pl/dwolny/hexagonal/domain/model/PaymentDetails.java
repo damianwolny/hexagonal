@@ -1,14 +1,12 @@
 package pl.dwolny.hexagonal.domain.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
-@Data
+@Getter
 @AllArgsConstructor
-@NoArgsConstructor
 public class PaymentDetails {
 
 	private BigDecimal amount;

@@ -1,12 +1,13 @@
 package pl.dwolny.hexagonal.application.response;
 
-import lombok.RequiredArgsConstructor;
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
 
 import java.util.UUID;
 
-@Value
-@RequiredArgsConstructor
+@Getter
+@AllArgsConstructor
 public class CreatePaymentResponse {
 
 	private final UUID id;
