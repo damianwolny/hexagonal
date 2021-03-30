@@ -40,19 +40,15 @@ public class PaymentService {  //Can Implement some interface if we plan to have
 		return new CreatePaymentResponse(payment.getId());
 	}
 
-	public Payment updatePayment(UpdatePaymentRequest updatePaymentRequest) {
+	public Payment updatePayment(UpdatePaymentRequest updatePaymentRequest) { //What is the purpose of updating Payment?
 
 		Payment payment = paymentRepository
 				.findById(updatePaymentRequest.getPayment().getId())
 				.orElseThrow(() -> new RuntimeException("Payment with given id doesn't exist"));
 
-		//Efficient only if we consider domain object as an entity and number fields to update is relatively small
-		//In other cases such as relational databases we have to provide here for example DTO pattern with MapStruct mapping
-		payment.setPaymentDetails(updatePaymentRequest.getPayment().getPaymentDetails());
+		deletePayment(payment.getId());
 
-		paymentRepository.save(payment);
-
-		return payment;
+		return paymentRepository.save(payment);
 	}
 
 	public List<Payment> getAllPayments() {

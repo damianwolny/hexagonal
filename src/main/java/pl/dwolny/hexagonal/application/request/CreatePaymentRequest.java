@@ -1,11 +1,13 @@
 package pl.dwolny.hexagonal.application.request;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import pl.dwolny.hexagonal.domain.model.PaymentDetails;
 
-@Getter
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class CreatePaymentRequest {
 
 	private PaymentDetails paymentDetails;
