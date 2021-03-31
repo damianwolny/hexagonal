@@ -15,7 +15,7 @@ import java.util.UUID;
 public class PaymentFacade {
 
 	//Multiple dependencies goes here
-	//In that simple case facade is obviously redundant abstraction layer
+	//In that simple case facade is obviously a redundant abstraction layer
 
 	private final PaymentService paymentService;
 

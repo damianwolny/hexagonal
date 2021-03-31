@@ -10,8 +10,9 @@ import pl.dwolny.hexagonal.domain.repository.PaymentRepository;
 import java.util.List;
 import java.util.UUID;
 
+//That can be our adapter, if we want to do it we can define a separate interface (port) to implement for this class
 @Service //Spring magic to simplify the architecture, ideally service should don't know anything abt dependency injection framework
-public class PaymentService {  //Can Implement some interface if we plan to have multiple implementation of below logic
+public class PaymentService {
 
 	private final PaymentRepository paymentRepository;
 

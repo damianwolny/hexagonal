@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+// Adapter
 @Component
 @ConditionalOnProperty(prefix = "db", name = "enabled", havingValue = "csv", matchIfMissing = true)
 @RequiredArgsConstructor
